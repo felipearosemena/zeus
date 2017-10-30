@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "nightwatch": "^0.9.15",
+    "node-fetch": "^1.7.3",
     "selenium-download": "^2.0.10"
   },
   "scripts": {
