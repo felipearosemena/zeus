@@ -74,7 +74,18 @@ class JsonSiteMap implements Factory
     protected function posts()
     {
         $posts = $this->db->posts;
+        // Only test agains post types that have a single
+        $post_types = get_post_types(array(
+          'publicly_queryable' => 'true'
+        ));
 
-        return "SELECT `guid`, `post_title`, `post_status` FROM $posts";
+        // Page is not publicly_queryable, but we do want to
+        // test against it
+        array_push($post_types, 'page');
+
+        $post_types = join("','", $post_types);
+
+        return "SELECT `guid`, `post_title`, `post_status` FROM $posts WHERE `post_status` = 'publish' AND `post_type` IN ('$post_types')";
+
     }
 }
