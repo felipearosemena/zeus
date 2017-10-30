@@ -9,6 +9,7 @@
     "grunt-wp-readme-to-markdown": "~1.0.0"
   },
   "dependencies": {
+    "dotenv": "^4.0.0",
     "nightwatch": "^0.9.15",
     "node-fetch": "^1.7.3",
     "selenium-download": "^2.0.10"

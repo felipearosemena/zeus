@@ -1,7 +1,14 @@
+require('dotenv').config()
+
 const path = require('path')
 const os = require('os')
 
-const launchUrl = 'http://zeus.dev'
+if(!process.env.LAUNCH_URL) {
+  throw new Error('You must configure your `.env` file with the LAUNCH_URL (eg: http://zeus.dev). `.env` must live at the root of the plugin directory.)')
+  return
+}
+
+const launchUrl = process.env.LAUNCH_URL
 const nightwatchBin = (file) => path.resolve('./node_modules/nightwatch/bin/' + file)
 
 module.exports = {
