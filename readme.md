@@ -1,13 +1,14 @@
 # Zeus
 
 > Automated end-to-end testing for WordPress. Zeus generates a JSON file based the GUID's of your WordPress site, and runs basic health checks against each URL.
- 
+
 ### Install
- 
+
 1. `cd wp-content/plugins`
 2. `git clone https://github.com/sagalbot/zeus.git`
-3. `cd zeus && composer install` 
-4. Activate Zeus plugin from `wp-admin`
+3. `cd zeus && composer install && yarn install`
+4. Rename `.env-sample` to `.env` and update the `LAUNCH_URL` variable with your local testing URL (eg: `http://zeus.dev`)
+5. Activate Zeus plugin from `wp-admin`
 
 ### Commands
 
