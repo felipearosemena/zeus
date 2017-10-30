@@ -11,6 +11,7 @@ namespace Zeus\Factories;
 
 use League\Flysystem\Filesystem;
 use Zeus\Contracts\Factory;
+use Zeus\Helpers;
 
 class Site implements Factory
 {
@@ -78,7 +79,7 @@ class Site implements Factory
      */
     public function save(array $result)
     {
-        $this->filesystem->put(config('paths.site'), json_encode($result, JSON_PRETTY_PRINT));
+        $this->filesystem->put(Helpers\config('paths.site'), json_encode($result, JSON_PRETTY_PRINT));
     }
 
     /**

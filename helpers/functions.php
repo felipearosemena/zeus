@@ -1,5 +1,7 @@
 <?php
 
+namespace Zeus\Helpers;
+
 use Zeus\App;
 
 /**

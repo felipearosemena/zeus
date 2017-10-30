@@ -2,6 +2,8 @@
 
 namespace Zeus\Commands;
 
+use Zeus\Helpers;
+
 class ZeusCommands
 {
     /**
@@ -15,7 +17,7 @@ class ZeusCommands
      */
     public function test()
     {
-        app(TestCommand::class)->handle();
+        Helpers\app(TestCommand::class)->handle();
     }
 
     /**
@@ -29,6 +31,6 @@ class ZeusCommands
      */
     public function generate()
     {
-        app(GenerateCommand::class)->handle();
+        Helpers\app(GenerateCommand::class)->handle();
     }
 }
