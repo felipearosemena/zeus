@@ -45,7 +45,14 @@ class JsonSiteMap implements Factory
      */
     public function generate()
     {
-        $result = $this->db->get_results($this->posts());
+        // Convert 'guid' #038; to &
+        $result = array_map(function($row) {
+
+          $row->guid = htmlspecialchars_decode($row->guid);
+
+          return $row;
+
+        }, $this->db->get_results($this->posts()));
 
         $this->save($result);
 
